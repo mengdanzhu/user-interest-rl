@@ -51,7 +51,7 @@ Our RL-trained teacher (Qwen2.5-32B) achieves the best results across all metric
 | HSTU | 0.216 | 0.250 | 0.194 | 0.228 | 0.184 |
 | Qwen2.5-32B (Prompt-only) | 0.153 | 0.194 | 0.139 | 0.188 | 0.147 |
 | **Ours (RL-trained, Qwen2.5-32B)** | **0.257** | **0.271** | **0.209** | **0.241** | **0.199** |
-| Ours (Distilled, Qwen2.5-0.5B) | 0.233 | 0.261 | 0.196 | 0.235 | 0.180 |
+| **Ours (Distilled, Qwen2.5-0.5B)** | 0.233 | 0.261 | 0.196 | 0.235 | 0.180 |
 
 ### Online A/B Test 
 
@@ -65,11 +65,11 @@ Deployed as an additional recall path, the student model yields statistically si
 
 ### Compute Scaling
 
-**Model capacity (space scaling).** Increasing model size consistently improves retrieval metrics and interest quality.
+**Model capacity.** Increasing model size consistently improves retrieval metrics and interest quality.
 
 <p align="center"><img src="figures/Scaling_Law.png" width="75%"></p>
 
-**Inference-time sampling (time scaling).** Generating `N` candidate lists per user and selecting via best-of-`N` on the composite reward improves performance with diminishing returns. Production uses `N=1` due to latency constraints.
+**Inference-time sampling.** Generating `N` candidate lists per user and selecting via best-of-`N` on the composite reward improves performance with diminishing returns. Production uses `N=1` due to latency constraints.
 
 <p align="center"><img src="figures/test_time_scaling.png" width="75%"></p>
 
